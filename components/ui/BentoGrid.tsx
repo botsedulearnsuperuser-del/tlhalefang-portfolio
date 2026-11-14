@@ -1,8 +1,12 @@
+"use client";
+
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { IoCopyOutline } from "react-icons/io5";
 
 // Also install this npm i --save-dev @types/react-lottie
-import Lottie from "react-lottie";
+// Loaded client-side only, react-lottie touches `document` on import
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 import { cn } from "@/lib/utils";
 
@@ -10,6 +14,7 @@ import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
+import { contactEmail } from "@/data";
 import MagicButton from "../MagicButton";
 
 export const BentoGrid = ({
@@ -52,8 +57,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = ["SOC", "Incident", "Forensics"];
+  const rightLists = ["Threat Intel", "Recovery", "React"];
 
   const [copied, setCopied] = useState(false);
 
@@ -67,7 +72,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = contactEmail;
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -180,7 +185,12 @@ export const BentoGridItem = ({
                   }`}
               >
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
-                <Lottie options={defaultOptions} height={200} width={400} />
+                <Lottie
+                  options={defaultOptions}
+                  height={200}
+                  width={400}
+                  eventListeners={[]}
+                />
               </div>
 
               <MagicButton
