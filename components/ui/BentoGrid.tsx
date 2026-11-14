@@ -97,11 +97,14 @@ export const BentoGridItem = ({
       {/* add img divs */}
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         {img && stackedImg && (
-          <div className="relative w-full aspect-video shrink-0">
+          <div className="relative w-full aspect-video shrink-0 overflow-hidden">
             <img
               src={img}
               alt={img}
-              className={cn("object-contain w-full h-full", imgClassName)}
+              className={cn(
+                "absolute inset-0 w-full h-full object-contain",
+                imgClassName
+              )}
             />
           </div>
         )}
