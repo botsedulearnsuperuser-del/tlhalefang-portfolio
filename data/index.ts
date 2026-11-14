@@ -78,7 +78,7 @@ export const projects = [
     img: "/project-incident-response.png",
     cover: true,
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    link: "https://irpaakanyo.co.bw",
   },
   {
     id: 2,
@@ -87,7 +87,7 @@ export const projects = [
     img: "/project-threat-intel.png",
     cover: true,
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    link: "https://threatinteltlhagiso.co.bw",
   },
   {
     id: 3,
