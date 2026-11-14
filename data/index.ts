@@ -125,7 +125,7 @@ export const testimonials = [
       "He settled in within days. He picked up our monitoring tools, cut through the noisy alerts and left notes the team could act on every morning.",
     name: "Supervisor",
     title: "Cybersecurity Internship",
-    img: "/profile.svg",
+    img: "/testimonial-supervisor.jpg",
   },
   {
     quote:
@@ -139,7 +139,7 @@ export const testimonials = [
       "On our exchange in Turkey he adapted faster than anyone. Calm under pressure, generous with what he knew, and the reason our group hit every deadline.",
     name: "Classmate",
     title: "Student Exchange, Turkey",
-    img: "/profile.svg",
+    img: "/testimonial-classmate.png",
   },
 ];
 
