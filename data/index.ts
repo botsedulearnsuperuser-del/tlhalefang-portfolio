@@ -73,8 +73,8 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "Incident Response Playbook",
-    des: "A practical playbook for triaging alerts, containing threats and documenting each response step.",
+    title: "Incident Response & Containment",
+    des: "Triaging alerts, containing live threats and documenting every step from detection to recovery.",
     img: "/project-incident-response.png",
     cover: true,
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
