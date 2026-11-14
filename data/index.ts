@@ -108,33 +108,38 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Working with Tlhalefang was easy from the start. He documented every finding, explained the evidence clearly and delivered his work on time. If you need someone who takes security seriously, he is the person to hire.",
-    name: "Project Partner",
-    title: "Botho University",
+      "Tlhalefang is my co-founder at Tsamaya. He built Legae, our transport payment app, and the platform where people buy homes and land. Fast, careful and always thinking about security.",
+    name: "Amogelang T.",
+    title: "Co-founder, Tsamaya & Legae",
+    img: "/testimonial-amogelang.png",
   },
   {
     quote:
-      "Tlhalefang was one of the most consistent students in my class. He asked good questions, handled forensic evidence carefully and always submitted work that was thorough and well organised.",
-    name: "Lecturer",
-    title: "Computer Forensics Module",
+      "Tlhalefang stood out in my forensics class. He handled evidence carefully, asked sharp questions and submitted work that was thorough and well organised.",
+    name: "Mr Lesotlho",
+    title: "Lecturer, Computer Forensics",
+    img: "/testimonial-lesotlho.png",
   },
   {
     quote:
-      "He joined us for a short internship and settled in fast. He picked up our monitoring tools, flagged the noisy alerts and wrote clean notes that the team could actually act on every morning.",
+      "He settled in within days. He picked up our monitoring tools, cut through the noisy alerts and left notes the team could act on every morning.",
     name: "Supervisor",
     title: "Cybersecurity Internship",
+    img: "/profile.svg",
   },
   {
     quote:
-      "I hired Tlhalefang to rebuild our website and he handled it end to end. The site is fast, works on every phone and he explained the security decisions in a way our small team understood.",
-    name: "Client",
-    title: "Freelance Web Project",
+      "I hired Tlhalefang to rebuild our website and he took it end to end. It is fast, it works on every phone, and he explained the security choices so our whole team understood.",
+    name: "Thathobo G.",
+    title: "CEO, UbuntuConnect",
+    img: "/testimonial-thathobo.png",
   },
   {
     quote:
-      "On our student exchange in Turkey, Tlhalefang adapted quickly and worked well with everyone. He stayed calm under pressure, shared what he knew and kept the group on track during tight deadlines.",
+      "On our exchange in Turkey he adapted faster than anyone. Calm under pressure, generous with what he knew, and the reason our group hit every deadline.",
     name: "Classmate",
     title: "Student Exchange, Turkey",
+    img: "/profile.svg",
   },
 ];
 
@@ -188,8 +193,8 @@ export const workExperience = [
   },
   {
     id: 3,
-    title: "Self Taught Full Stack Developer",
-    desc: "Learned React, Next.js and Node by building and deploying real web apps from start to finish.",
+    title: "Developer, Tsamaya & Legae",
+    desc: "Built Legae, a transport payment app, plus the app and website for buying homes and land.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },
