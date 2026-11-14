@@ -33,7 +33,11 @@ const RecentProjects = () => {
                   alt="cover"
                   className={
                     "cover" in item && item.cover
-                      ? "z-10 absolute inset-0 h-full w-full object-cover object-center"
+                      ? `z-10 absolute inset-0 h-full w-full object-cover ${
+                          "imgPosition" in item && item.imgPosition
+                            ? item.imgPosition
+                            : "object-center"
+                        }`
                       : "z-10 absolute bottom-0"
                   }
                 />
@@ -71,7 +75,7 @@ const RecentProjects = () => {
                 <div className="flex justify-center items-center">
                   <UbuntuIcon className="me-2 lg:w-6 lg:h-6 w-5 h-5" />
                   <p className="flex lg:text-xl md:text-xs text-sm text-emerald-400">
-                    Check Live Site
+                    Read More
                   </p>
                 </div>
               </div>
