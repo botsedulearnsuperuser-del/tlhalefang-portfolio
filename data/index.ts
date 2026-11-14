@@ -11,9 +11,10 @@ export const gridItems = [
     title: "I document every finding clearly and report it honestly ",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
-    imgClassName: "w-full h-full object-contain object-top",
-    titleClassName: "justify-end",
+    imgClassName: "",
+    titleClassName: "justify-start",
     img: "/incident-response-report.jpg",
+    stackedImg: true,
     spareImg: "",
   },
   {
