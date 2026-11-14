@@ -1,9 +1,8 @@
 "use client";
 
-import { FaLocationArrow } from "react-icons/fa6";
-
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
+import { techIcons, UbuntuIcon } from "./ui/TechIcons";
 
 const RecentProjects = () => {
   return (
@@ -52,24 +51,24 @@ const RecentProjects = () => {
 
               <div className="flex items-center justify-between mt-7 mb-3">
                 <div className="flex items-center">
-                  {item.iconLists.map((icon, index) => (
+                  {techIcons.map((Icon, index) => (
                     <div
                       key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      className="border border-white/[.2] rounded-full bg-black text-white lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       style={{
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
+                      <Icon className="lg:w-6 lg:h-6 w-5 h-5" />
                     </div>
                   ))}
                 </div>
 
                 <div className="flex justify-center items-center">
+                  <UbuntuIcon className="me-2 lg:w-6 lg:h-6 w-5 h-5" />
                   <p className="flex lg:text-xl md:text-xs text-sm text-emerald-400">
                     Check Live Site
                   </p>
-                  <FaLocationArrow className="ms-3" color="#34D399" />
                 </div>
               </div>
             </PinContainer>
