@@ -130,8 +130,8 @@ export const BentoGridItem = ({
         {id === 6 && (
           // add background animation , remove the p tag
           <BackgroundGradientAnimation
-            gradientBackgroundStart="rgb(5, 61, 46)"
-            gradientBackgroundEnd="rgb(2, 10, 14)"
+            gradientBackgroundStart="rgb(10, 92, 67)"
+            gradientBackgroundEnd="rgb(2, 14, 11)"
             firstColor="16, 185, 129"
             secondColor="20, 184, 166"
             thirdColor="5, 150, 105"
@@ -219,7 +219,7 @@ export const BentoGridItem = ({
                 icon={<IoCopyOutline />}
                 position="left"
                 handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
+                otherClasses="!bg-[#08362A] !border-emerald-400/40"
               />
             </div>
           )}
