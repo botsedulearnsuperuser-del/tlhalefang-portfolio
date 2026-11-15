@@ -40,8 +40,8 @@ const Hero = () => {
         />
       </div>
 
-      <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
+      <div className="relative z-10 my-20 flex flex-col items-center justify-center gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[42rem] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
             Cyber Security & Digital Forensics
           </p>
@@ -67,6 +67,15 @@ const Hero = () => {
               position="right"
             />
           </a>
+        </div>
+
+        <div className="relative order-first shrink-0 lg:order-last">
+          <div className="absolute inset-8 rounded-full bg-emerald-400/20 blur-3xl" />
+          <img
+            src="/tlhalefang-hero.png"
+            alt="Tlhalefang Ntshilane"
+            className="relative w-[240px] md:w-[320px] lg:w-[380px] h-auto drop-shadow-[0_0_40px_rgba(52,211,153,0.25)]"
+          />
         </div>
       </div>
     </div>
