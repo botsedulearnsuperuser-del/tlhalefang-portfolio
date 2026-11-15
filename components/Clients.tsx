@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
-
-import { companies, testimonials } from "@/data";
+import { testimonials } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteCards";
+import { toolLogos } from "./ui/ToolLogos";
 
 const Clients = () => {
   return (
@@ -25,23 +24,14 @@ const Clients = () => {
           />
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
-          {companies.map((company) => (
-            <React.Fragment key={company.id}>
-              <div className="flex md:max-w-60 max-w-32 gap-2">
-                <img
-                  src={company.img}
-                  alt={company.name}
-                  className="md:w-10 w-5"
-                />
-                <img
-                  src={company.nameImg}
-                  alt={company.name}
-                  width={company.id === 4 || company.id === 5 ? 100 : 150}
-                  className="md:w-24 w-20"
-                />
-              </div>
-            </React.Fragment>
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-6 md:gap-x-12 max-lg:mt-10">
+          {toolLogos.map(({ id, name, Icon }) => (
+            <div key={id} className="flex items-center gap-2">
+              <Icon className="md:w-9 md:h-9 w-6 h-6 text-white/80" />
+              <span className="md:text-lg text-sm text-white-200 whitespace-nowrap">
+                {name}
+              </span>
+            </div>
           ))}
         </div>
       </div>
