@@ -1,10 +1,25 @@
-import { FaLocationArrow } from "react-icons/fa6";
+"use client";
+
+import { useEffect, useState } from "react";
+import { FaLocationArrow, FaUserSecret } from "react-icons/fa6";
 
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    if (open) document.addEventListener("keydown", onKey);
+
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
     <div className="pb-20 pt-36">
       {/**
@@ -40,8 +55,8 @@ const Hero = () => {
         />
       </div>
 
-      <div className="relative z-10 my-20 flex flex-col items-center justify-center gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[42rem] flex flex-col items-center justify-center">
+      <div className="relative z-10 my-20 flex flex-col items-center justify-center">
+        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[46rem] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
             Cyber Security & Digital Forensics
           </p>
@@ -60,24 +75,86 @@ const Hero = () => {
             Hi! I&apos;m Tlhalefang, a Cyber Security and Forensics Analyst.
           </p>
 
-          <a href="#about">
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
-          </a>
-        </div>
+          <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto md:mt-10">
+            <a href="#about" className="w-full md:w-auto">
+              <MagicButton
+                title="Show my work"
+                icon={<FaLocationArrow />}
+                position="right"
+                otherClasses="!mt-0"
+              />
+            </a>
 
-        <div className="relative order-first shrink-0 lg:order-last">
-          <div className="absolute inset-8 rounded-full bg-emerald-400/20 blur-3xl" />
-          <img
-            src="/tlhalefang-hero.png"
-            alt="Tlhalefang Ntshilane"
-            className="relative w-[240px] md:w-[320px] lg:w-[380px] h-auto drop-shadow-[0_0_40px_rgba(52,211,153,0.25)]"
-          />
+            <MagicButton
+              title="Meet the hacker"
+              icon={<FaUserSecret />}
+              position="right"
+              handleClick={() => setOpen(true)}
+              otherClasses="md:mt-0"
+            />
+          </div>
         </div>
       </div>
+
+      {open && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          onClick={() => setOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Meet the hacker"
+        >
+          <div
+            className="relative w-full max-w-3xl rounded-2xl border border-emerald-400/20 bg-[#04071D] p-6 md:p-8"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Close"
+              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-lg text-white/70 transition hover:border-emerald-400/40 hover:text-emerald-400"
+            >
+              ✕
+            </button>
+
+            <div className="flex flex-col items-center gap-6 md:flex-row md:items-start md:gap-8">
+              <img
+                src="/tlhalefang-hero.png"
+                alt="Tlhalefang Ntshilane"
+                className="w-[180px] shrink-0 rounded-xl drop-shadow-[0_0_40px_rgba(52,211,153,0.25)] md:w-[240px]"
+              />
+
+              <div className="text-center md:text-left">
+                <h3 className="text-xl font-bold text-white md:text-2xl">
+                  Tlhalefang Ntshilane
+                </h3>
+                <p className="mt-1 text-sm text-emerald-400">
+                  Cyber Security &amp; Digital Forensics Analyst
+                </p>
+
+                <p className="mt-4 text-sm leading-relaxed text-white-200 md:text-base">
+                  I investigate incidents, recover evidence and document every
+                  step so anyone can follow it. I also build and ship full stack
+                  web apps from first line to deploy.
+                </p>
+
+                <p className="mt-3 text-sm leading-relaxed text-white-200 md:text-base">
+                  Currently open to junior SOC, incident response and forensics
+                  roles.
+                </p>
+
+                <a
+                  href="#contact"
+                  onClick={() => setOpen(false)}
+                  className="mt-6 inline-flex items-center gap-2 text-sm text-emerald-400"
+                >
+                  Let&apos;s talk <FaLocationArrow />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
