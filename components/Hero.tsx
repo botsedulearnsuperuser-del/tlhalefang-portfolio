@@ -82,9 +82,19 @@ const Hero = () => {
               icon={<FaUserSecret />}
               position="right"
               handleClick={() => setOpen(true)}
-              otherClasses="md:mt-0"
+              otherClasses="!mt-0"
             />
           </div>
+
+          <a
+            href="#about"
+            className="mt-10 flex flex-col items-center gap-1 text-[11px] uppercase tracking-[0.3em] text-white-200/60 transition hover:text-emerald-400 md:text-xs"
+          >
+            Scroll down to learn more
+            <span aria-hidden="true" className="animate-bounce text-base">
+              ↓
+            </span>
+          </a>
         </div>
       </div>
 
