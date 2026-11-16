@@ -5,7 +5,7 @@ import { FaLocationArrow, FaUserSecret } from "react-icons/fa6";
 
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
-import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import TypingHeading from "./ui/TypingHeading";
 
 const Hero = () => {
   const [open, setOpen] = useState(false);
@@ -61,15 +61,7 @@ const Hero = () => {
             Cyber Security & Digital Forensics
           </p>
 
-          {/**
-           *  Link: https://ui.aceternity.com/components/text-generate-effect
-           *
-           *  change md:text-6xl, add more responsive code
-           */}
-          <TextGenerateEffect
-            words="Securing Systems, Recovering Evidence, Building Web Apps"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
-          />
+          <TypingHeading className="text-[40px] leading-tight md:text-5xl lg:text-6xl" />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
             Hi! I&apos;m Tlhalefang, a Cyber Security and Forensics Analyst.
